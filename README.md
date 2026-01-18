@@ -2,7 +2,7 @@
 
 **ZenRead** is a distraction-free web application designed to improve your online reading experience. It transforms cluttered blog posts and articles into a clean, focused "Reader View," while offering tools to track your reading progress and manage your reading list.
 
-![ZenRead](https://placeholder-image-url-if-available.com) *Note: Replace with a screenshot of the app*
+![ZenRead](./images/ZenRead1.png)
 
 ## 🎯 What is it useful for?
 
@@ -12,6 +12,9 @@ We often find interesting articles but get distracted by ads, pop-ups, and clutt
 *   **Progress Tracking:** Providing a visual progress bar and percentage indicator that tracks how much you've read.
 *   **Time Management:** estimating reading time before you start, helping you decide if you have time to read it now or save it for later.
 *   **Library Management:** Automatically saving your reading history and progress, so you can pick up exactly where you left off on any article.
+*   
+![ZenRead](./images/ZenRead3.png)
+
 
 ## ✨ Key Features
 
@@ -50,6 +53,7 @@ We often find interesting articles but get distracted by ads, pop-ups, and clutt
 
 4.  **Open in browser:**
     Navigate to [http://localhost:3000](http://localhost:3000).
+ 
 
 ## ⚠️ Current Shortcomings
 
