@@ -1,68 +1,196 @@
+:root {
+  --zen-primary: #5c8d89;
+  --zen-secondary: #74b49b;
+  --zen-bg: #f7f9f8;
+  --zen-accent: #a7d7c5;
+  --zen-light: #f1f7f5;
+  --zen-text: #2d3e3a;
+  --zen-muted: #8e9a97;
+}
+
 body {
-  background-color: #f8f9fa;
-  color: #212529;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  overflow-x: hidden;
+  background-color: var(--zen-bg);
+  color: var(--zen-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: -0.01em;
 }
 
-.blog-content p {
-  margin-bottom: 1.5rem;
+.zen-brand {
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  color: var(--zen-primary);
 }
 
-.sticky-top {
+.zen-title {
+  color: var(--zen-primary);
+}
+
+.text-zen {
+  color: var(--zen-primary) !important;
+}
+
+.bg-zen-light {
+  background-color: var(--zen-light) !important;
+}
+
+/* Sidebar Styling */
+.zen-sidebar {
+  width: 320px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  z-index: 1040;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zen-item {
+  transition: all 0.2s ease;
+  border-radius: 12px !important;
+  margin: 0 12px 4px 12px !important;
+}
+
+.zen-item:hover {
+  background-color: var(--zen-light) !important;
+  transform: translateY(-1px);
+}
+
+.zen-item.active {
+  background-color: var(--zen-light) !important;
+  color: var(--zen-text) !important;
+  border-left: 4px solid var(--zen-primary) !important;
+}
+
+.zen-item .delete-btn {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.zen-item:hover .delete-btn {
+  opacity: 0.5;
+}
+
+.zen-item .delete-btn:hover {
+  opacity: 1;
+}
+
+.zen-mini-progress {
+  height: 3px !important;
+  background-color: rgba(0,0,0,0.05) !important;
+}
+
+.zen-mini-progress .progress-bar {
+  background-color: var(--zen-secondary) !important;
+}
+
+/* Main Content Styling */
+.zen-main {
+  margin-left: 320px;
+  width: calc(100% - 320px);
   transition: all 0.3s ease;
 }
 
-.progress {
-  background-color: #e9ecef;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  background-color: #0d6efd;
-  transition: width 0.1s ease;
-}
-
-article {
+.zen-search-form {
+  display: flex;
+  background: white;
+  padding: 8px 8px 8px 24px;
+  border-radius: 50px;
   border: 1px solid rgba(0,0,0,0.05);
 }
 
-header h1 {
-  color: #0d6efd;
+.zen-search-form input:focus {
+  outline: none;
+  box-shadow: none;
 }
 
-/* Sidebar Responsive Styles */
+.btn-zen {
+  background-color: var(--zen-primary);
+  color: white;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-zen:hover {
+  background-color: var(--zen-secondary);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Stats Bar Styling */
+.zen-stats-bar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.03);
+  z-index: 1000;
+}
+
+.zen-main-progress {
+  height: 6px !important;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.05) !important;
+}
+
+.zen-main-progress .progress-bar {
+  background-color: var(--zen-primary);
+  border-radius: 10px;
+}
+
+/* Article Styling */
+.zen-article {
+  border: none !important;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.02) !important;
+  line-height: 1.8;
+}
+
+.zen-content {
+  font-size: 1.15rem;
+  color: #3e4a47;
+}
+
+.zen-content p {
+  margin-bottom: 1.8rem;
+}
+
+/* Utility */
+.x-small {
+  font-size: 0.75rem;
+}
+
+.alert-zen-danger {
+  background-color: #fff1f1;
+  color: #c94a4a;
+  border: none;
+  border-radius: 12px;
+}
+
+.zen-overlay {
+  background: rgba(45, 62, 58, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 1030;
+}
+
+.btn-zen-toggle {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 12px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  aside {
+  .zen-sidebar {
     transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
   }
   
-  aside.translate-x-0 {
+  .zen-sidebar.show {
     transform: translateX(0);
   }
 
-  main {
-    margin-left: 0 !important;
-    width: 100% !important;
+  .zen-main {
+    margin-left: 0;
+    width: 100%;
   }
-}
-
-/* Scrollbar Styling for Sidebar */
-aside::-webkit-scrollbar {
-  width: 6px;
-}
-
-aside::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
-
-aside::-webkit-scrollbar-thumb {
-  background: #c1c1c1; 
-  border-radius: 3px;
-}
-
-aside::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8; 
 }
